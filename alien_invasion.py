@@ -3,7 +3,7 @@ import sys
 from settings import settings
 class AlienInvasion:
 
-    def_init_(self):
+    def _init_(self):
         pygame.init()
         self.settings=settings()
         self.screen=pygame.display.set_mode((self.settings.screen_width, self.settings.screen_height))
@@ -19,6 +19,6 @@ class AlienInvasion:
             pygame.display.flip()
 
 
-if_name_== '_main_':
+if _name_== '_main_':
     ai = AlienInvasion()
     ai.run_game()
