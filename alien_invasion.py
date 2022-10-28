@@ -10,7 +10,7 @@ class AlienInvasion:
     def __init__(self):
         pygame.init()
         self.settings = Settings()
-        self.screen = pygame.display.set_mode((200, 200))  # , pygame.FULLSCREEN)
+        self.screen = pygame.display.set_mode((400, 400))  # , pygame.FULLSCREEN)
         self.settings.screen_width = self.screen.get_rect().width
         self.settings.screen_height = self.screen.get_rect().height
         pygame.display.set_caption("Alien Invasion")
