@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1fa34224-7b75-4b85-8595-ec3975417440" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/game_stats.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Homework/bullet2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Homework/bullet2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Homework/settings_h.py" beforeDir="false" afterPath="$PROJECT_DIR$/Homework/settings_h.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homework/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Homework/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/alien.py" beforeDir="false" afterPath="$PROJECT_DIR$/alien.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/alien_invasion.py" beforeDir="false" afterPath="$PROJECT_DIR$/alien_invasion.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ship.py" beforeDir="false" afterPath="$PROJECT_DIR$/ship.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
