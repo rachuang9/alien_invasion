@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1fa34224-7b75-4b85-8595-ec3975417440" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Homework/raindrop.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Homework/rainfallGame.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework/alienh.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework/gamestaticsh.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homework/raindrop.py" beforeDir="false" afterPath="$PROJECT_DIR$/Homework/raindrop.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homework/rainfallGame.py" beforeDir="false" afterPath="$PROJECT_DIR$/Homework/rainfallGame.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homework/rocket.py" beforeDir="false" afterPath="$PROJECT_DIR$/Homework/rocket.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Homework/settings_h.py" beforeDir="false" afterPath="$PROJECT_DIR$/Homework/settings_h.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homework/sidewaysshooter.py" beforeDir="false" afterPath="$PROJECT_DIR$/Homework/sidewaysshooter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alien.py" beforeDir="false" afterPath="$PROJECT_DIR$/alien.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/raindrop.bmp" beforeDir="false" afterPath="$PROJECT_DIR$/Homework/raindrop.bmp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,14 +40,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/m252646/Desktop/EW200/Labs/playground.py&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/m252646/Desktop/EW200/Labs/Lab7/alien_invasion"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\m252646\Desktop\EW200\Labs\Lab7\alien_invasion\Homework" />

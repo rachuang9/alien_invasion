@@ -1,35 +1,48 @@
 import sys
 import pygame
+from random import random
 from bullet2 import Bullet
 from rocket import Ship
 from settings_h import Settings
+from alienh import Alien
+from gamestaticsh import GameStats
 
 
-class Rocket:
+class SidewaysShooter:
+
+
     def __init__(self):
+
         pygame.init()
         self.settings = Settings()
-        self.screen = pygame.display.set_mode((self.settings.screen_width, self.settings.screen_height))
-        pygame.display.set_caption("sideways shooter")
-        # self.rect.midleft = self.settin.get_rect().midleft
-        # self.display_rect = display.get_rect()
-        # self.rocket_speed = 1.5
-        # self.y = float(self.rect.y)
-        # self.bg_color = (200, 200, 200)
+
+        self.screen = pygame.display.set_mode(
+            (self.settings.screen_width, self.settings.screen_height))
+        pygame.display.set_caption("Sideways Shooter")
+
+
+        self.stats = GameStats(self)
 
         self.ship = Ship(self)
         self.bullets = pygame.sprite.Group()
+        self.aliens = pygame.sprite.Group()
 
     def run_game(self):
 
         while True:
             self._check_events()
-            self.ship.update()
-            self._update_bullets()
+
+            if self.stats.game_active:
+                # Consider creating a new alien.
+                self._create_alien()
+
+                self.ship.update()
+                self._update_bullets()
+                self._update_aliens()
+
             self._update_screen()
 
     def _check_events(self):
-
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -42,16 +55,13 @@ class Rocket:
     def _check_keydown_events(self, event):
 
         if event.key == pygame.K_UP:
-
             self.ship.moving_up = True
-            print("Moving up")
         elif event.key == pygame.K_DOWN:
             self.ship.moving_down = True
-            print("Moving down")
-        elif event.key == pygame.K_q:
-            sys.exit()
         elif event.key == pygame.K_SPACE:
             self._fire_bullet()
+        elif event.key == pygame.K_q:
+            sys.exit()
 
     def _check_keyup_events(self, event):
 
@@ -60,29 +70,82 @@ class Rocket:
         elif event.key == pygame.K_DOWN:
             self.ship.moving_down = False
 
+    def _fire_bullet(self):
+
+        if len(self.bullets) < self.settings.bullets_allowed:
+            new_bullet = Bullet(self)
+            self.bullets.add(new_bullet)
+
     def _update_bullets(self):
+
         self.bullets.update()
-        # get rid of bullets that are off the screen
+
+
         for bullet in self.bullets.copy():
             if bullet.rect.left >= self.screen.get_rect().right:
                 self.bullets.remove(bullet)
 
-    def _fire_bullet(self, bullets_allowed=4):
-        if len(self.bullets) < bullets_allowed:
-            new_bullet = Bullet(self)
-            self.bullets.add(new_bullet)
+        self._check_bullet_alien_collisions()
+
+    def _check_bullet_alien_collisions(self):
+
+        collisions = pygame.sprite.groupcollide(
+            self.bullets, self.aliens, True, True)
+
+    def _create_alien(self):
+
+        if random() < self.settings.alien_frequency:
+            alien = Alien(self)
+            self.aliens.add(alien)
+
+    def _update_aliens(self):
+
+        self.aliens.update()
+
+        if pygame.sprite.spritecollideany(self.ship, self.aliens):
+            self._ship_hit()
+
+
+        self._check_aliens_left_edge()
+
+    def _check_aliens_left_edge(self):
+
+        for alien in self.aliens.sprites():
+            if alien.rect.left < 0:
+                self._ship_hit()
+                break
+
+    def _ship_hit(self):
+
+        if self.stats.ships_left > 0:
+            # Decrement ships left.
+            self.stats.ships_left -= 1
+
+
+            self.aliens.empty()
+            self.bullets.empty()
+
+
+            self.ship.center_ship()
+        else:
+            self.stats.game_active = False
 
     def _update_screen(self):
+
         self.screen.fill(self.settings.bg_color)
         self.ship.blitme()
         for bullet in self.bullets.sprites():
             bullet.draw_bullet()
 
+        self.aliens.draw(self.screen)
+
         pygame.display.flip()
 
 
+
+
 if __name__ == '__main__':
-    sideways_game = Rocket()
+    sideways_game = SidewaysShooter()
     sideways_game.run_game()
 
 # pygame.init()
